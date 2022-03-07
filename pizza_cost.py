@@ -12,16 +12,19 @@ def main():
     diameter = int(input("Enter the diameter in inches of your pizza here! (Inch): "))
 
     # process
-    diameter = (
+    sub_total = (
         constants.labour_cost
         + constants.rent_cost
         + (constants.COST_PER_INCH * diameter)
     )
-    total = constants.HST * diameter
+    total = constants.HST * sub_total
 
     # output
-    print("")
-    print("The cost of your pizza (TAX INCLUDED) is  ${1:,.2f}".format(diameter, total))
+    print(
+        "The cost of a {0} inch pizza (TAX INCLUDED) is  ${1:,.2f}".format(
+            diameter, total
+        )
+    )
     print("\nDone.")
 
 
